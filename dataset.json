@@ -1,0 +1,9 @@
+{
+  "objects": [
+    { "class": "cat" },
+    { "class": "cat" },
+    { "class": "dog" },
+    { "class": "car" },
+    { "class": "dog" }
+  ]
+}
