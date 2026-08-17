@@ -15,6 +15,7 @@ fileInput.addEventListener("change", function (event) {
 
         const classCounts = {};
         let missingClassCount = 0;
+        let missingIdCount = 0;
         const objectIds = new Set();
         let duplicateCount = 0;
         const duplicateIds = [];
@@ -32,7 +33,9 @@ fileInput.addEventListener("change", function (event) {
                 }
             }
 
-if (object.id !== undefined) {
+if (object.id === undefined) {
+    missingIdCount++;
+} else {
     if (objectIds.has(object.id)) {
         duplicateCount++;
         duplicateIds.push(object.id);
@@ -55,7 +58,10 @@ if (object.id !== undefined) {
             classesList.innerHTML +=
                 "<br>⚠ Missing class: " + missingClassCount;
         }
-
+if (missingIdCount > 0) {
+    classesList.innerHTML +=
+        "<br>⚠ Missing ID: " + missingIdCount;
+}
        if (duplicateCount > 0) {
     classesList.innerHTML +=
         "<br>⚠ Duplicate objects: " + duplicateCount;
