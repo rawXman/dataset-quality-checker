@@ -1,0 +1,19 @@
+{
+  "objects": [
+    {
+      "class": "cat"
+    },
+    {
+      "class": "dog"
+    },
+    {
+      "class": ""
+    },
+    {
+      "class": "cat"
+    },
+    {
+      "id": 5
+    }
+  ]
+}
