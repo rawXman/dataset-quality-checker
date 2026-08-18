@@ -12,7 +12,12 @@ fileInput.addEventListener("change", function (event) {
 
     reader.onload = function () {
         const data = JSON.parse(reader.result);
-
+        
+if (!data.objects || !Array.isArray(data.objects)) {
+    classesList.innerHTML = "⚠ Invalid dataset structure";
+    objectsCount.textContent = "";
+    return;
+}
         const classCounts = {};
         let missingClassCount = 0;
         let missingIdCount = 0;
