@@ -7,7 +7,11 @@ A lightweight browser-based tool for inspecting JSON datasets used in AI data an
 - Upload a JSON dataset directly in the browser
 - Parse the dataset automatically
 - Count the total number of objects
-- Display the classes found in the dataset
+- Display class statistics
+- Detect missing class labels
+- Detect missing object IDs
+- Detect duplicate object IDs
+- Validate dataset structure
 
 ## Example Dataset
 
