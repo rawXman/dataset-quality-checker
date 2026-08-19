@@ -52,8 +52,10 @@ if (object.id === undefined) {
 
         objectsCount.textContent = "Objects: " + data.objects.length;
 
-        classesList.innerHTML = "Classes:<br>";
-
+        classesList.innerHTML = "Dataset Quality Report<br><br>";
+classesList.innerHTML += "Objects: " + data.objects.length + "<br>";
+classesList.innerHTML += "Classes: " + Object.keys(classCounts).length + "<br>";
+classesList.innerHTML += "<br>Class distribution:<br>";
 for (const className in classCounts) {
     const percentage =
         (classCounts[className] / data.objects.length * 100).toFixed(1);
@@ -62,7 +64,9 @@ for (const className in classCounts) {
         className + ": " + classCounts[className] +
         " (" + percentage + "%)<br>";
 }
-
+if (missingClassCount > 0 || missingIdCount > 0 || duplicateCount > 0) {
+    classesList.innerHTML += "<br>Quality issues:<br>";
+}
         if (missingClassCount > 0) {
             classesList.innerHTML +=
                 "<br>⚠ Missing class: " + missingClassCount;
