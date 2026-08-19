@@ -78,6 +78,11 @@ if (missingIdCount > 0) {
     classesList.innerHTML +=
         "<br>Duplicate IDs: " + duplicateIds.join(", ");
 }
+const qualityIssues =
+    missingClassCount + missingIdCount + duplicateCount;
+
+classesList.innerHTML +=
+    "<br><br>Quality issues: " + qualityIssues;
 
         console.log(data);
     };
