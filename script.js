@@ -12,7 +12,7 @@ fileInput.addEventListener("change", function (event) {
 
     reader.onload = function () {
         const data = JSON.parse(reader.result);
-        
+
 if (!data.objects || !Array.isArray(data.objects)) {
     classesList.innerHTML = "⚠ Invalid dataset structure";
     objectsCount.textContent = "";
@@ -54,10 +54,14 @@ if (object.id === undefined) {
 
         classesList.innerHTML = "Classes:<br>";
 
-        for (const className in classCounts) {
-            classesList.innerHTML +=
-                className + ": " + classCounts[className] + "<br>";
-        }
+for (const className in classCounts) {
+    const percentage =
+        (classCounts[className] / data.objects.length * 100).toFixed(1);
+
+    classesList.innerHTML +=
+        className + ": " + classCounts[className] +
+        " (" + percentage + "%)<br>";
+}
 
         if (missingClassCount > 0) {
             classesList.innerHTML +=
