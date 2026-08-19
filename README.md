@@ -2,63 +2,97 @@
 
 A lightweight browser-based tool for inspecting JSON datasets used in AI data annotation and training workflows.
 
-## Current Features
+## Features
 
 - Upload a JSON dataset directly in the browser
-- Parse the dataset automatically
+- Parse JSON files using the FileReader API
 - Count the total number of objects
-- Display class statistics
-- Detect missing class labels
-- Detect missing object IDs
+- Count unique classes
+- Show class distribution and percentages
+- Detect missing `class` fields
+- Detect missing `id` fields
 - Detect duplicate object IDs
-- Validate dataset structure
+- Display duplicate IDs
+- Calculate the total number of quality issues
+- Display a compact dataset quality report
+- Handle clean datasets without displaying empty quality warnings
 
 ## Example Dataset
 
-The current test dataset contains objects with class labels such as:
+The test datasets contain objects with class labels such as:
 
 - `cat`
 - `dog`
 - `car`
 
-## Planned Features
+The project includes test datasets for different quality scenarios:
 
-- Unique class statistics
-- Class distribution
-- Missing field detection
-- Duplicate detection
-- Dataset validation
-- Quality report
+- `test-clean.json` — valid dataset without quality issues
+- `test-quality.json` — dataset containing multiple quality issues
+- `test-invalid.json` — invalid dataset structure
+- `test-duplicates.json` — duplicate object IDs
+- `test-broken.json` — broken dataset structure
 
-## Technologies
+## Example Report
 
-- HTML
-- CSS
-- JavaScript
-- JSON
-- FileReader API
+```text
+Dataset Quality Report
 
-## How to Run
+Objects: 5
+Classes: 3
+
+Class distribution:
+cat: 1 (20.0%)
+dog: 2 (40.0%)
+car: 1 (20.0%)
+
+Quality issues:
+
+⚠ Missing class: 1
+⚠ Missing ID: 1
+⚠ Duplicate objects: 1
+Duplicate IDs: 2
+
+Quality issues: 3
+For a clean dataset:
+Dataset Quality Report
+
+Objects: 3
+Classes: 3
+
+Class distribution:
+cat: 1 (33.3%)
+dog: 1 (33.3%)
+car: 1 (33.3%)
+
+Quality issues: 0
+Technologies
+HTML5
+CSS3
+JavaScript
+JSON
+FileReader API
+Git / GitHub
+How to Run
 
 No installation or dependencies are required.
 
-1. Download or clone the repository.
-2. Open `index.html` in a browser.
-3. Select a `.json` dataset.
-4. Review the dataset information displayed by the tool.
-
-## Project Goal
+Clone or download the repository.
+Open index.html in a browser.
+Select a .json dataset.
+Review the dataset quality report.
+Project Goal
 
 This project is part of a portfolio focused on practical tools for AI data annotation, dataset quality and AI training workflows.
 
 The goal is to build small utilities that can help identify common dataset issues before data is used for AI training.
 
-## Related Project
+Related Project
 
-[AI Dataset Labeler](https://github.com/rawXman/ai-dataset-labeler)
+AI Dataset Labeler
 
-## Author
+Author
 
 Roman Pushkarev
 
-GitHub: [@rawXman](https://github.com/rawXman)
+GitHub: @rawXman
