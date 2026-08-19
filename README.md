@@ -100,7 +100,7 @@ The goal is to build small utilities that can help identify common dataset issue
 
 ## Related Project
 
-**AI Dataset Labeler**
+[AI Dataset Labeler](https://github.com/rawXman/ai-dataset-labeler)
 
 ## Author
 
